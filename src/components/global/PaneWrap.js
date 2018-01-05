@@ -6,6 +6,7 @@ const PaneWrap = styled.section`
   height: 100vh;
   box-sizing: border-box;
   display: flex;
+  transition: width 1s ease-in;
 `
 
 export default PaneWrap;
