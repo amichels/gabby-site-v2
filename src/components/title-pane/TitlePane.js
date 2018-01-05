@@ -9,10 +9,16 @@ import TitlePaneArt from './TitlePaneArt';
 // Utils
 import paths from '../../configs/paths';
 
+const transEnd = (e) => {
+  console.log(e);
+}
+
 const TitlePane = (props) => {
-  console.log(props);
   return (
-    <TitlePaneWrap route={props.match.url}>
+    <TitlePaneWrap
+      onTransitionEnd={(e) => transEnd(e)}
+      route={props.match.url}
+    >
       <Switch>
         <Route exact path={paths.home} component={TitlePaneHome} />
         <Route exact path={paths.art} component={TitlePaneArt} />
