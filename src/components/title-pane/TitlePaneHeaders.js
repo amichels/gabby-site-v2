@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-// configs
-import paths from '../../configs/paths.js';
-
 const setShow = (show) => {
   if(show) {
     return `
@@ -18,9 +15,7 @@ const TitlePaneHeaders = styled.div`
   opacity: 0;
   transition: opacity 1s ease-in;
 
-  ${props =>
-    setShow(props.show)
-  };
+  ${props => setShow(props.show)};
 `
 
 export default TitlePaneHeaders;

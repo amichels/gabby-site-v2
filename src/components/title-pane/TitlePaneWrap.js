@@ -1,8 +1,5 @@
 import PaneWrap from '../global/PaneWrap';
 
-// configs
-import paths from '../../configs/paths.js';
-
 const setActiveStyles = (active) => {
   if(!active) {
     return `
@@ -15,7 +12,7 @@ const setActiveStyles = (active) => {
 }
 
 const TitlePaneWrap = PaneWrap.extend`
-  align-items: center;
+  width: 60vw;
   background: linear-gradient(to bottom, rgba(242,255,0,1) 1%, rgba(255,89,255,1) 100%);
   &:before {
     content: ' ';
@@ -31,9 +28,7 @@ const TitlePaneWrap = PaneWrap.extend`
     z-index: 100;
   }
 
-  ${props =>
-    setActiveStyles(props.active)
-  };
+  ${props => setActiveStyles(props.active)};
 `
 
 export default TitlePaneWrap;

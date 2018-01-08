@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import { injectGlobal } from 'styled-components';
 
 // components
 import GlobalStyles from './components/global/GlobalStyles';
-import TitlePane from './components/title-pane/TitlePane.js';
 import Container from './components/global/Container.js';
+import TitlePane from './components/title-pane/TitlePane.js';
+import ContentPane from './components/content-pane/ContentPane.js';
 
 const App = () => {
   return (
     <Router>
       <Container>
-        <Route exact path='*' component={TitlePane} />
+        <TitlePane />
+        <ContentPane />
       </Container>
     </Router>
   )

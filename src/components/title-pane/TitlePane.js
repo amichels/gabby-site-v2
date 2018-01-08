@@ -52,7 +52,7 @@ class TitlePane extends React.Component {
       >
         <Switch>
           <Route exact path={paths.home}
-            render={ routeProps =>
+            render={() =>
               <TitlePaneHome
                 showHeaders={this.state.showHeaders}
               />

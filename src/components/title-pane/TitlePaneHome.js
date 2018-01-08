@@ -13,7 +13,7 @@ const TitlePaneHome = (props) => {
             show={props.showHeaders}
         >
             <TitleHeader>Gabby Defonso</TitleHeader>
-            <TitleSubheader>Art + Design <Link to="/art">Art</Link></TitleSubheader>
+            <TitleSubheader>Art + Design</TitleSubheader>
         </TitlePaneHeaders>
     )
 }
