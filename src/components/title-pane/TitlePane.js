@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 // components
 import TitlePaneWrap from './TitlePaneWrap';
@@ -9,22 +9,65 @@ import TitlePaneArt from './TitlePaneArt';
 // Utils
 import paths from '../../configs/paths';
 
-const transEnd = (e) => {
-  console.log(e);
+class TitlePane extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.props.history.listen((location, action) => {
+      const url = location.pathname;
+      this.checkRouteAnimations(url);
+    });
+
+    this.state = {
+      showHeaders: false,
+      paneActive: true,
+    };
+  }
+
+  checkRouteAnimations(url) {
+    const home = url === paths.home;
+
+    this.homeAnimations(home);
+  }
+
+  homeAnimations(home) {
+    this.activatePane(home);
+    this.fadeHeaders(home);
+  }
+
+  activatePane(active) {
+    this.setState({paneActive: active});
+  }
+
+  fadeHeaders(show) {
+    setTimeout(() => {
+      this.setState({showHeaders: show});
+    }, 1000);
+  }
+
+  render() {
+    return (
+      <TitlePaneWrap
+        active={this.state.paneActive}
+      >
+        <Switch>
+          <Route exact path={paths.home}
+            render={ routeProps =>
+              <TitlePaneHome
+                showHeaders={this.state.showHeaders}
+              />
+            }
+          />
+          <Route exact path={paths.art} component={TitlePaneArt} />
+        </Switch>
+      </TitlePaneWrap>
+    )
+  }
+
+  componentDidMount() {
+    const url = this.props.match.url;
+    this.checkRouteAnimations(url);
+  }
 }
 
-const TitlePane = (props) => {
-  return (
-    <TitlePaneWrap
-      onTransitionEnd={(e) => transEnd(e)}
-      route={props.match.url}
-    >
-      <Switch>
-        <Route exact path={paths.home} component={TitlePaneHome} />
-        <Route exact path={paths.art} component={TitlePaneArt} />
-      </Switch>
-    </TitlePaneWrap>
-  )
-}
-
-export default TitlePane;
+export default withRouter(TitlePane);

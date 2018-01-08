@@ -1,11 +1,10 @@
-import styled from 'styled-components';
 import PaneWrap from '../global/PaneWrap';
 
 // configs
 import paths from '../../configs/paths.js';
 
-const setRouteStyles = (route) => {
-  if(route !== paths.home) {
+const setActiveStyles = (active) => {
+  if(!active) {
     return `
       width: 25vw;
       &:before {
@@ -33,7 +32,7 @@ const TitlePaneWrap = PaneWrap.extend`
   }
 
   ${props =>
-    setRouteStyles(props.route)
+    setActiveStyles(props.active)
   };
 `
 
