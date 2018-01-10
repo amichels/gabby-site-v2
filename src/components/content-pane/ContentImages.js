@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TitlePaneArt = () => {
+const ContentImages = () => {
   return (
     <div>Art</div>
   )
 }
 
-export default TitlePaneArt;
+export default ContentImages;

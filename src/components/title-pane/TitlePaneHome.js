@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // components
@@ -10,7 +9,7 @@ import TitleSubheader from './TitleSubheader';
 const TitlePaneHome = (props) => {
     return (
         <TitlePaneHeaders
-            show={props.showHeaders}
+            show={props.show}
         >
             <TitleHeader>Gabby Defonso</TitleHeader>
             <TitleSubheader>Art + Design</TitleSubheader>
@@ -19,8 +18,7 @@ const TitlePaneHome = (props) => {
 }
 
 TitlePaneHome.propTypes = {
-    showHeaders: PropTypes.bool.isRequired
-  }
-  
+    show: PropTypes.bool.isRequired
+}
 
 export default TitlePaneHome;

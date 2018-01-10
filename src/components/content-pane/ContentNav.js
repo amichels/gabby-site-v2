@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Switch, Route, withRouter, Link } from 'react-router-dom';
 
 const ContentNav = styled.nav`
   width: 25vw;

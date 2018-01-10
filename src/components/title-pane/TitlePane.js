@@ -4,10 +4,11 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 // components
 import TitlePaneWrap from './TitlePaneWrap';
 import TitlePaneHome from './TitlePaneHome';
-import TitlePaneArt from './TitlePaneArt';
+import TitlePaneContent from './TitlePaneContent';
 
-// Utils
+// Configs
 import paths from '../../configs/paths';
+import content from '../../configs/content';
 
 class TitlePane extends React.Component {
   constructor(props){
@@ -21,6 +22,8 @@ class TitlePane extends React.Component {
     this.state = {
       showHeaders: false,
       paneActive: true,
+      showContentHeaders: false,
+      showContentBack: false
     };
   }
 
@@ -32,17 +35,27 @@ class TitlePane extends React.Component {
 
   homeAnimations(home) {
     this.activatePane(home);
-    this.fadeHeaders(home);
+    this.showHeaders(home);
   }
 
   activatePane(active) {
     this.setState({paneActive: active});
   }
 
-  fadeHeaders(show) {
+  showHeaders(show) {
     setTimeout(() => {
       this.setState({showHeaders: show});
+      this.showContentHeader(!show);
     }, 1000);
+  }
+
+  showContentHeader(show) {
+    this.setState({showContentHeaders: show});
+    this.showContentBack(show)
+  }
+
+  showContentBack(show) {
+    this.setState({showContentBack: show});
   }
 
   render() {
@@ -54,11 +67,23 @@ class TitlePane extends React.Component {
           <Route exact path={paths.home}
             render={() =>
               <TitlePaneHome
-                showHeaders={this.state.showHeaders}
+                show={this.state.showHeaders}
               />
             }
           />
-          <Route exact path={paths.art} component={TitlePaneArt} />
+          {Object.keys(content).map((key) => {
+              return (
+                <Route key={key} exact path={content[key].path}
+                  render={() =>
+                    <TitlePaneContent
+                      show={this.state.showContentHeaders}
+                      title={content[key].title}
+                      showBack={this.state.showContentBack}
+                    />
+                  }
+                />   
+              )
+          })}
         </Switch>
       </TitlePaneWrap>
     )
