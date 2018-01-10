@@ -19,7 +19,7 @@ class ContentPane extends React.Component {
     });
 
     this.state = {
-      showNav: true,
+      showNav: false,
       paneActive: false,
     };
   }
@@ -31,10 +31,17 @@ class ContentPane extends React.Component {
 
   contentAnimations(content) {
     this.activatePane(content);
+    this.showNav(!content);
   }
 
   activatePane(active) {
     this.setState({paneActive: active});
+  }
+
+  showNav(show) {
+    setTimeout(() => {
+      this.setState({showNav: show});
+    }, 1500);
   }
 
   render() {
@@ -46,7 +53,7 @@ class ContentPane extends React.Component {
           <Route exact path={paths.home}
             render={() =>
               <ContentNav
-                showNav={this.state.showNav}
+                show={this.state.showNav}
               >
                 <ContentNavItem to={paths.art}> Art</ContentNavItem>
                 <ContentNavItem to={paths.photo}>Photo</ContentNavItem>

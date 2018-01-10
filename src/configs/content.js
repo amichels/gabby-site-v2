@@ -12,6 +12,10 @@ const content = {
     design: {
         path: paths.design,
         title: 'Design'
+    },
+    about: {
+        path: paths.about,
+        title: 'About'
     }
 }
 
