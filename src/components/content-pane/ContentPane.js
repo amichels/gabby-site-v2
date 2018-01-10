@@ -15,10 +15,26 @@ class ContentPane extends React.Component {
 
     this.props.history.listen((location, action) => {
       const url = location.pathname;
+      this.checkRouteAnimations(url);
     });
 
     this.state = {
+      showNav: true,
+      paneActive: false,
     };
+  }
+
+  checkRouteAnimations(url) {
+    const content = url !== paths.home;
+    this.contentAnimations(content);
+  }
+
+  contentAnimations(content) {
+    this.activatePane(content);
+  }
+
+  activatePane(active) {
+    this.setState({paneActive: active});
   }
 
   render() {
@@ -30,7 +46,7 @@ class ContentPane extends React.Component {
           <Route exact path={paths.home}
             render={() =>
               <ContentNav
-                showHeaders={this.state.showHeaders}
+                showNav={this.state.showNav}
               >
                 <ContentNavItem to={paths.art}> Art</ContentNavItem>
                 <ContentNavItem to={paths.photo}>Photo</ContentNavItem>
@@ -45,6 +61,8 @@ class ContentPane extends React.Component {
   }
 
   componentDidMount() {
+    const url = this.props.location.pathname;
+    this.checkRouteAnimations(url);
   }
 }
 

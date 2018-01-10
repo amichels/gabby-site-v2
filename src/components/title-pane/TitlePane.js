@@ -65,7 +65,7 @@ class TitlePane extends React.Component {
   }
 
   componentDidMount() {
-    const url = this.props.match.url;
+    const url = this.props.location.pathname;
     this.checkRouteAnimations(url);
   }
 }

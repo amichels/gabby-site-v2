@@ -1,9 +1,12 @@
 import PaneWrap from '../global/PaneWrap';
 
+// Configs
+import colors from '../../configs/colors';
+
 const setActiveStyles = (active) => {
   if(!active) {
     return `
-      width: 25vw;
+      width: 40vw;
       &:before {
         opacity: 1;
       }
@@ -13,7 +16,8 @@ const setActiveStyles = (active) => {
 
 const TitlePaneWrap = PaneWrap.extend`
   width: 60vw;
-  background: linear-gradient(to bottom, rgba(242,255,0,1) 1%, rgba(255,89,255,1) 100%);
+  background: linear-gradient(to bottom, ${colors.pink} 1%, ${colors.yellow} 100%);
+  transition: width: 1s ease-in;
   &:before {
     content: ' ';
     display: block;
