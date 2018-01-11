@@ -23,6 +23,7 @@ class TitlePane extends React.Component {
       showHeaders: false,
       paneActive: true,
       showContentHeaders: false,
+      showContentTitle: false,
       showContentBack: false
     };
   }
@@ -45,17 +46,22 @@ class TitlePane extends React.Component {
   showHeaders(show) {
     setTimeout(() => {
       this.setState({showHeaders: show});
-      this.showContentHeader(!show);
+      this.showContentHeaders(!show);
     }, 1000);
   }
 
-  showContentHeader(show) {
+  showContentHeaders(show) {
     this.setState({showContentHeaders: show});
-    this.showContentBack(show)
+    this.showContentTitle(show);
+    this.showContentBack(show);
   }
 
   showContentBack(show) {
     this.setState({showContentBack: show});
+  }
+
+  showContentTitle(show) {
+    this.setState({showContentTitle: show});
   }
 
   render() {
@@ -80,6 +86,7 @@ class TitlePane extends React.Component {
                       title={content[key].title}
                       icon={content[key].icon}
                       showBack={this.state.showContentBack}
+                      showTitle={this.state.showContentTitle}
                     />
                   }
                 />   

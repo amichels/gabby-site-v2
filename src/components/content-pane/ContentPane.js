@@ -58,7 +58,11 @@ class ContentPane extends React.Component {
               >
                 {Object.keys(content).map((key) => {
                     return (
-                      <ContentNavItem key={key} to={content[key].path}>
+                      <ContentNavItem
+                        key={key}
+                        to={content[key].path}
+                        title={content[key].title}
+                      >
                         {content[key].icon}
                       </ContentNavItem>  
                     )

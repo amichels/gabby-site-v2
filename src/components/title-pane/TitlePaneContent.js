@@ -22,14 +22,18 @@ const TitlePaneContent = (props) => {
       <TitleContentIcon>
         {props.icon}
       </TitleContentIcon>
-      <TitleContentHeader>{props.title}</TitleContentHeader>
-        <TitleContentBack
-          show={props.showBack}
-        >
-          <Link to={paths.home}>
-            <BackArrow />
-          </Link>
-        </TitleContentBack>
+      <TitleContentHeader
+        show={props.showTitle}
+      >
+        {props.title}
+      </TitleContentHeader>
+      <TitleContentBack
+        show={props.showBack}
+      >
+        <Link to={paths.home}>
+          <BackArrow />
+        </Link>
+      </TitleContentBack>
     </TitlePaneHeaders>
   )
 }
@@ -37,6 +41,7 @@ const TitlePaneContent = (props) => {
 TitlePaneContent.propTypes = {
   show: PropTypes.bool.isRequired,
   showBack: PropTypes.bool.isRequired,
+  showTitle: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.object.isRequired
 }
