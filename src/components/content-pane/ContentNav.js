@@ -9,7 +9,7 @@ const setShow = (show) => {
 }
 
 const ContentNav = styled.nav`
-  width: 25vw;
+  width: 18vw;
   height: 100vh;
   display: flex;
   flex-direction: column;

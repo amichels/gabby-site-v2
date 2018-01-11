@@ -6,8 +6,9 @@ import ContentPaneWrap from './ContentPaneWrap';
 import ContentNav from './ContentNav';
 import ContentNavItem from './ContentNavItem';
 
-// Utils
+// Configs
 import paths from '../../configs/paths';
+import content from '../../configs/content';
 
 class ContentPane extends React.Component {
   constructor(props){
@@ -55,10 +56,13 @@ class ContentPane extends React.Component {
               <ContentNav
                 show={this.state.showNav}
               >
-                <ContentNavItem to={paths.art}> Art</ContentNavItem>
-                <ContentNavItem to={paths.photo}>Photo</ContentNavItem>
-                <ContentNavItem to={paths.design}>Design</ContentNavItem>
-                <ContentNavItem to={paths.about}>About</ContentNavItem>
+                {Object.keys(content).map((key) => {
+                    return (
+                      <ContentNavItem key={key} to={content[key].path}>
+                        {content[key].icon}
+                      </ContentNavItem>  
+                    )
+                })}
               </ContentNav>
             }
           />

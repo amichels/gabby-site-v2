@@ -15,6 +15,9 @@ const TitlePaneHeaders = styled.div`
   opacity: 0;
   transition: opacity 1s ease-in;
   z-index: 200;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   ${props => setShow(props.show)};
 `

@@ -6,6 +6,7 @@ const ContentNavItem = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2rem 0;
 `
 
 export default ContentNavItem;

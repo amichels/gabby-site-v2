@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 // Components
 import TitlePaneHeaders from './TitlePaneHeaders';
 import TitleContentHeader from './TitleContentHeader';
+import TitleContentIcon from './TitleContentIcon';
 import TitleContentBack from './TitleContentBack';
 
 // Icons
 import BackArrow from '../../images/icons/BackArrow';
 
 // Configs
-import colors from '../../configs/colors';
 import paths from '../../configs/paths';
 
 const TitlePaneContent = (props) => {
@@ -19,16 +19,17 @@ const TitlePaneContent = (props) => {
     <TitlePaneHeaders
         show={props.show}
     >
-        <TitleContentHeader>{props.title}</TitleContentHeader>
-          <TitleContentBack
-            show={props.showBack}
-          >
-            <Link to={paths.home}>
-              <BackArrow
-                fill={colors.purple}
-              />
-            </Link>
-          </TitleContentBack>
+      <TitleContentIcon>
+        {props.icon}
+      </TitleContentIcon>
+      <TitleContentHeader>{props.title}</TitleContentHeader>
+        <TitleContentBack
+          show={props.showBack}
+        >
+          <Link to={paths.home}>
+            <BackArrow />
+          </Link>
+        </TitleContentBack>
     </TitlePaneHeaders>
   )
 }
@@ -36,7 +37,8 @@ const TitlePaneContent = (props) => {
 TitlePaneContent.propTypes = {
   show: PropTypes.bool.isRequired,
   showBack: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired
 }
 
 export default TitlePaneContent;

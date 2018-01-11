@@ -78,6 +78,7 @@ class TitlePane extends React.Component {
                     <TitlePaneContent
                       show={this.state.showContentHeaders}
                       title={content[key].title}
+                      icon={content[key].icon}
                       showBack={this.state.showContentBack}
                     />
                   }
