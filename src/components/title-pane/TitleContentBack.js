@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-// configs
-import colors from '../../configs/colors';
-
 const setShow = (show) => {
   if(show) {
     return `
