@@ -5,6 +5,7 @@ import { Switch, Route, withRouter} from 'react-router-dom';
 import ContentPaneWrap from './ContentPaneWrap';
 import ContentNav from './ContentNav';
 import ContentNavItem from './ContentNavItem';
+import ContentCon from './ContentCon';
 
 // Configs
 import paths from '../../configs/paths';
@@ -36,13 +37,15 @@ class ContentPane extends React.Component {
   }
 
   activatePane(active) {
-    this.setState({paneActive: active});
+    setTimeout(() => {
+      this.setState({paneActive: active});
+    }, 1);
   }
 
   showNav(show) {
     setTimeout(() => {
       this.setState({showNav: show});
-    }, 1500);
+    }, 1);
   }
 
   render() {
@@ -70,6 +73,19 @@ class ContentPane extends React.Component {
               </ContentNav>
             }
           />
+          {Object.keys(content).map((key) => {
+              return (
+                <Route key={key} exact path={content[key].path}
+                  render={() =>
+                    <ContentCon
+                      active={this.state.paneActive}
+                    >
+                      {content[key].content}
+                    </ContentCon>
+                  }
+                />   
+              )
+          })}
         </Switch>
       </ContentPaneWrap>
     )

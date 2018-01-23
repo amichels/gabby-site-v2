@@ -47,7 +47,7 @@ class TitlePane extends React.Component {
     setTimeout(() => {
       this.setState({showHeaders: show});
       this.showContentHeaders(!show);
-    }, 1000);
+    }, 1); // 1 is to make sure the css transitions run on react component render
   }
 
   showContentHeaders(show) {

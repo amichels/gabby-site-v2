@@ -7,6 +7,7 @@ const setActiveStyles = (active) => {
   if(!active) {
     return `
       width: 40vw;
+      position: fixed;
       &:before {
         opacity: 1;
       }
@@ -23,7 +24,7 @@ const TitlePaneWrap = PaneWrap.extend`
     display: block;
     background-color: white;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transition: opacity 1s 1s ease-in;
     position: absolute;
     top: 0;
     right: 0;

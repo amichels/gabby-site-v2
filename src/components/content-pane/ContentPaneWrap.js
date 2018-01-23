@@ -7,6 +7,9 @@ const setActiveStyles = (active) => {
   if(active) {
     return `
       width: 60vw;
+      min-height: 100vh;
+      height: auto;
+      margin-left: auto;
       background-color: ${colors.salmon};
     `
   }

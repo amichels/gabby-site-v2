@@ -16,7 +16,7 @@ const ContentNav = styled.nav`
   text-align: center;
   font-size: 3rem;
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 1s 1.5s ease-in;
 
   ${props => setShow(props.show)};
 `
