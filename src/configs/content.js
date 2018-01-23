@@ -11,6 +11,8 @@ import PencilIcon from '../images/icons/Pencil.js';
 
 // Images
 import artImages from './images/art.js'
+import photoImages from './images/photo.js'
+import designImages from './images/design.js'
 
 // Configs
 import paths from './paths';
@@ -26,13 +28,13 @@ const content = {
         path: paths.photo,
         title: 'Product Photography',
         icon: <CameraIcon />,
-        content: <ContentImages images={artImages}/>
+        content: <ContentImages images={photoImages}/>
     },
     design: {
         path: paths.design,
         title: 'Design',
         icon: <MouseIcon />,
-        content: <ContentImages images={artImages}/>
+        content: <ContentImages images={designImages}/>
     },
     about: {
         path: paths.about,

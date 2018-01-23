@@ -11,7 +11,7 @@ const setActiveStyles = (active) => {
 const ContentCon = styled.div`
   width: 100%;
   opacity: 0;
-  transition: opacity 1s 2.5s ease-in;
+  transition: opacity 1s 1.5s ease-in;
 
   ${props => setActiveStyles(props.active)};
 `
