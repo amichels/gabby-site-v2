@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import baguetteBox from 'baguettebox.js';
 
 // Components
 import ContentImagesWrap from './ContentImagesWrap';
 import ContentImage from './ContentImage';
-
-baguetteBox.run('.js-portfolio');
 
 const ContentImages = (props) => {
   
