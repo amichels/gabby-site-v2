@@ -10,7 +10,6 @@ const setShow = (show) => {
 
 const TitlePaneHeaders = styled.div`
   text-align: center;
-  width: 100%;
   padding: 0 1rem;
   opacity: 0;
   transition: opacity 1s ease-in;

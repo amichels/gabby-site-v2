@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// configs
+import mq from '../../configs/mediaQueries';
+
 const setShow = (show) => {
   if(show) {
     return `
@@ -14,13 +17,19 @@ const TitleContentBack = styled.div`
   height: 2.5rem;
   display: block;
   position: absolute;
-  bottom: 1rem;
-  left: 0;
-  right: 0;
+  left: .5rem;
+  top: .5rem;
   margin: 0 auto;
   opacity: 0;
   transform: rotate(90deg);
   transition: opacity 1s 1s ease-in, transform .5s 2s ease-out;
+
+  @media (min-width: ${mq.sm}px) {
+    bottom: 1rem;
+    top: auto;
+    left: 0;
+    right: 0;
+  }
 
   ${props => setShow(props.show)};
 `

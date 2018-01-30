@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
+// configs
+import mq from '../../configs/mediaQueries';
+
 const Container = styled.div`
-  display: flex;
+  @media (min-width: ${mq.sm}px) {
+    display: flex;
+  }
 `
 
 export default Container;

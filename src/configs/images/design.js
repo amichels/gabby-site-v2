@@ -4,6 +4,34 @@ const designImages = [
         thumb:"/images/design/thumbs/soquaint-logo-collage.jpg"
     },
     {
+        full:"/images/design/business-card-1.jpg",
+        thumb:"/images/design/thumbs/business-card-1.jpg"
+    },
+    {
+        full:"/images/design/business-card-2.jpg",
+        thumb:"/images/design/thumbs/business-card-2.jpg"
+    },
+    {
+        full:"/images/design/FirstTimeServiceSpecialsCard-1.jpg",
+        thumb:"/images/design/thumbs/FirstTimeServiceSpecialsCard-1.jpg"
+    },
+    {
+        full:"/images/design/FirstTimeServiceSpecialsCard-2.jpg",
+        thumb:"/images/design/thumbs/FirstTimeServiceSpecialsCard-2.jpg"
+    },
+    {
+        full:"/images/design/food-characters.jpg",
+        thumb:"/images/design/thumbs/food-characters.jpg"
+    },
+    {
+        full:"/images/design/gabby-logo.jpg",
+        thumb:"/images/design/thumbs/gabby-logo.jpg"
+    },
+    {
+        full:"/images/design/jungle-babe.jpg",
+        thumb:"/images/design/thumbs/jungle-babe.jpg"
+    },
+    {
         full:"/images/design/soquaint-house.jpg",
         thumb:"/images/design/thumbs/soquaint-house.jpg"
     },
@@ -40,14 +68,6 @@ const designImages = [
         thumb:"/images/design/thumbs/cat-tshirt-layout.jpg"
     },
     {
-        full:"/images/design/god-merch.jpg",
-        thumb:"/images/design/thumbs/god-merch.jpg"
-    },
-    {
-        full:"/images/design/vi+amin_+ee.jpg",
-        thumb:"/images/design/thumbs/vi+amin_+ee.jpg"
-    },
-    {
         full:"/images/design/Studio-324-Color-Logos.jpg",
         thumb:"/images/design/thumbs/Studio-324-Color-Logos.jpg"
     },
@@ -62,6 +82,14 @@ const designImages = [
     {
         full:"/images/design/lurk.jpg",
         thumb:"/images/design/thumbs/lurk.jpg"
+    },
+    {
+        full:"/images/design/god-merch.jpg",
+        thumb:"/images/design/thumbs/god-merch.jpg"
+    },
+    {
+        full:"/images/design/vi+amin_+ee.jpg",
+        thumb:"/images/design/thumbs/vi+amin_+ee.jpg"
     },
     {
         full:"/images/design/picnic-party.jpg",
@@ -96,12 +124,12 @@ const designImages = [
         thumb:"/images/design/thumbs/cone.jpg"
     },
     {
-        full:"/images/design/recycling-project.jpg",
-        thumb:"/images/design/thumbs/recycling-project.jpg"
+        full:"/images/design/back2body-gifcard1.jpg",
+        thumb:"/images/design/thumbs/back2body-gifcard1.jpg"
     },
     {
-        full:"/images/design/EX_TEARS.jpg",
-        thumb:"/images/design/thumbs/EX_TEARS.jpg"
+        full:"/images/design/back2body-gifcard2.jpg",
+        thumb:"/images/design/thumbs/back2body-gifcard2.jpg"
     },
     {
         full:"/images/design/hugo.jpg",
@@ -138,6 +166,14 @@ const designImages = [
     {
         full:"/images/design/pineapplecolor.jpg",
         thumb:"/images/design/thumbs/pineapplecolor.jpg"
+    },
+    {
+        full:"/images/design/recycling-project.jpg",
+        thumb:"/images/design/thumbs/recycling-project.jpg"
+    },
+    {
+        full:"/images/design/EX_TEARS.jpg",
+        thumb:"/images/design/thumbs/EX_TEARS.jpg"
     }
 ]
 

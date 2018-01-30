@@ -2,6 +2,7 @@ import React from 'react';
 
 // Components
 import ContentImages from '../components/content-pane/ContentImages';
+import ContentAbout from '../components/content-pane/ContentAbout';
 
 // Icons
 import CameraIcon from '../images/icons/Camera.js';
@@ -40,7 +41,7 @@ const content = {
         path: paths.about,
         title: 'About',
         icon: <HandIcon />,
-        content: <ContentImages images={artImages}/>
+        content: <ContentAbout/>
     }
 }
 

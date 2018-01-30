@@ -2,12 +2,22 @@ import PaneWrap from '../global/PaneWrap';
 
 // Configs
 import colors from '../../configs/colors';
+import mq from '../../configs/mediaQueries';
 
 const setActiveStyles = (active) => {
   if(!active) {
     return `
-      width: 40vw;
-      position: fixed;
+      z-index: 100;
+
+      @media (min-width: ${mq.xs}px) {
+        height: 40vh;
+      }
+
+      @media (min-width: ${mq.sm}px) {
+        width: 40%;
+        height: 100vh;
+      }
+
       &:before {
         opacity: 1;
       }
@@ -16,9 +26,20 @@ const setActiveStyles = (active) => {
 }
 
 const TitlePaneWrap = PaneWrap.extend`
-  width: 60vw;
   background: linear-gradient(to bottom, ${colors.pink} 1%, ${colors.yellow} 100%);
   transition: width: 1s ease-in;
+  height: 33.3333vh;
+  display: flex;
+
+  @media (min-width: ${mq.xs}px) {
+    height: 70vh;
+  }
+
+  @media (min-width: ${mq.sm}px) {
+    width: 60%;
+    height: 100vh;
+  }
+
   &:before {
     content: ' ';
     display: block;
